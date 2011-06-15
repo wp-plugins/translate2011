@@ -1,4 +1,5 @@
-== Translate ==
+=== Translate ===
+Translate
 Contributors: misternifty, tox2ik
 Donate link: n/a
 Tags: language, languages, translate, translation, images, pages, posts, dictionary, the_title, list_pages, 
@@ -35,14 +36,12 @@ To facilitate the process of translating themes, there is a dictionary of terms 
 This plugin is a continuation of the Translate plugin by misternifty. The 
 new maintainer is tox2ik as of version 1.3. 
 
-== Changelog ==
-== 1.3 ==
-June 2011; Jaroslav Rakhmatoullin <jazzoslav@gmail.com>:
-* The meta_key which is used for translating titles is no longer just
-the language name. For clarity there is now an underscore folowed by
-`title' like so: 
-meta_key: english -> english_title
+== Changelog == 
 
+translate 1.3 : June 2011; Jaroslav Rakhmatoullin <jazzoslav@gmail.com>:
+
+* The meta_key which is used for translating titles is no longer just the language name. For clarity there is now an underscore folowed by `title' like so: 
+	 - meta_key: english -> english_title
 * updated the admin page.
 	 - removing and making languages default works.
 	 - added a dictionary and forms to manipulate it.
@@ -52,15 +51,13 @@ prefix_translate_langs and prefix_translate_dict. _langs table has new
 fields: icon and order which deside which img to show for language in 
 list_translations() as well as the order of languages.
 
-== 1.2 ==
-* Translate no longer uses commas as delimiters for the parameters, use the 
-| pipe symbol instead. This caused problems when trying to translate 
-paragraphs with commas.
-* Nested shortcodes. You can now add contact forms, photo galleries and 
-whatever other plugin that uses shortcodes into the [translate] tags.
+translate 1.2:
+
+* Translate no longer uses commas as delimiters for the parameters, use the  | pipe symbol instead.
+This caused problems when trying to translate paragraphs with commas.
+* Nested shortcodes. You can now add contact forms, photo galleries and whatever other plugin that uses shortcodes into the [translate] tags.
 
 == Upgrade Notice ==
 = 1.3 =
 Adds support for a defining and and using translated strings as well 
-as a couple new shortcodes. 
-
+as a couple new shortcodes.
