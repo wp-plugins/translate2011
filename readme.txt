@@ -1,11 +1,20 @@
-Translate 
-=========
+== Translate ==
 Contributors: misternifty, tox2ik
 Donate link: n/a
 Tags: language, languages, translate, translation, images, pages, posts, dictionary, the_title, list_pages, 
 Requires at least: 2.7
 Tested up to: 3.1.3
 Stable tag: 1.3
+
+== Description == 
+
+There are plenty of auto translate plugins, but they leave the content rigid
+with grammatical errors.  For those needing a solution to translate a WordPress site manually into
+unlimited languages or versions, WP-Translate will do the job.
+
+Using shortcodes, template tags, and a widget, you can easily create a site that will reflect appropriate content, images, links, and text for each language.  You can use simple shortcodes in your content, or customize your templates to change your entire site.  The beautiful thing is that you don't need to create multiple posts or pages for each language.  All content is filtered off one post or page.
+To facilitate the process of translating themes, there is a dictionary of terms in the admin page.  The term translations may be retrieved with a shortcode or a template tag and make customization of elements such as forms or titles on the page very handy.  
+
 
 
 == Installation == 
