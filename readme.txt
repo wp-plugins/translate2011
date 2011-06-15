@@ -20,12 +20,12 @@ To facilitate the process of translating themes, there is a dictionary of terms 
 
 == Installation == 
 
-1. Unzip `Translate.zip' to the `/wp-content/plugins/' directory
-1. Activate the plugin through the `Plugins' menu in WordPress
+1. Unzip `Translate.zip` to the `/wp-content/plugins/` directory
+1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Add languages in the Translate page under Plugins in the admin menu.
-1. Visit: http://genja.org/wordpress/2011/06/worpress-translate/ for full 
-	documentation of shortcodes and template tags. The same documentation 
-	is also available in translate.html.
+1. Visit: [http://genja.org/wordpress/2011/06/worpress-translate/](the author's
+blog) for full documentation of shortcodes and template tags. The same
+documentation is also available in `translate.html`.
 
 == Screenshots ==
 
@@ -38,8 +38,8 @@ new maintainer is tox2ik as of version 1.3.
 
 == Changelog == 
 
-translate 1.3 : June 2011; Jaroslav Rakhmatoullin <jazzoslav@gmail.com>:
-
+= 1.3 =
+* June 2011; Jaroslav Rakhmatoullin <jazzoslav@gmail.com>:
 * The meta_key which is used for translating titles is no longer just the language name. For clarity there is now an underscore folowed by `title' like so: 
 	 - meta_key: english -> english_title
 * updated the admin page.
@@ -51,7 +51,7 @@ prefix_translate_langs and prefix_translate_dict. _langs table has new
 fields: icon and order which deside which img to show for language in 
 list_translations() as well as the order of languages.
 
-translate 1.2:
+= 1.2 = 
 
 * Translate no longer uses commas as delimiters for the parameters, use the  | pipe symbol instead.
 This caused problems when trying to translate paragraphs with commas.
@@ -61,3 +61,7 @@ This caused problems when trying to translate paragraphs with commas.
 = 1.3 =
 Adds support for a defining and and using translated strings as well 
 as a couple new shortcodes.
+= 1.2 =
+Comma delimiters have been changed. translate_{text,image,link} now takes
+arguments separated by the pipe (|) character and not comma (,) as previously.
+This is done to allow commas in the text=argument.
