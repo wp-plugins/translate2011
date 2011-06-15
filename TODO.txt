@@ -1,0 +1,7 @@
+Features to include in 1.31
+==========================
+* make the languages list respect the `order` column in prefix_translate_langs 
+  and add input fields for `order`. 
+* add options disable annoyances in admin page. 
+* make input fieds expand on mouse hover to make editing easier
+* make a cleaner layout for the tables.
