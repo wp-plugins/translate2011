@@ -1,0 +1,199 @@
+<!-- v:1.3 -->
+<style type="text/css">
+ul li {
+	margin:0px 0px 15px 0px;
+}
+</style>
+
+<h1>WordPress Translate Plugin</h1>
+<p>
+There are plenty of auto translate plugins, but they leave the content rigid with grammatical errors.
+For those needing a solution to translate a WordPress site manually into unlimited languages or versions, 
+WP-Translate will do the job.
+</p>
+<p>
+Using shortcodes, template tags, and a widget, you can easily create a site that will reflect appropriate content, images, links, and text for each language.
+You can use simple shortcodes in your content, or customize your templates to change your entire site.
+The beautiful thing is that you don't need to create multiple posts or pages for each language.
+All content is filtered off one post or page.
+</p>
+To facilitate the process of translating themes, there is a dictionary of terms in the admin page.
+The term translations may be retrieved with a shortcode or a template tag and make customization of elements such as forms or titles on the page very handy.
+<p>
+
+</p>
+
+
+<h2>Usage</h2>
+<h3>Adding languages and dictionary terms</h3>
+Navigate to the `Translate' page in the admin panel under Plugins and use the input fields next to green plus icons to add terms and languages. 
+Note that a term may be added only after there is at least one language. 
+The default language may be selected by adding it twice. 
+
+
+
+<h3>Translate page titles</h3>
+To translate a page title, add a custom field to the post or page with key = %language_name%<strong>_title</strong> and value = translated title. Note the _title after %language_name%. <br />
+Example:
+<ul>
+	<li>english_title = Football</li>
+	<li>american_title = Soccer</li>
+</ul>
+This will translate the title of a page assuming english and american are two previously added languages. 
+
+
+<h3>Shortcodes</h3>
+The supported shortcodes are listed below and can be placed anywhere in posts, pages and text-widgets to generate content. <br/>
+Arguments enclosed in &lt;&gt; are mandatory (must be given) and those enclosed in [] are optional.
+
+
+<ul>
+	<li><strong>[translate] Translated text [/translate]</strong></li>
+	Saves a translated version of a paragraph. 
+	It is displayed when the activated language is the same as the one given in the lang= argument.<br />
+	Arguments:
+		<ul>
+			<li>&lt;lang=%language_name%&gt;</li>
+			<li>[nodiv=1]</li>
+		</ul>
+	Examples:
+		<ul>
+			<li>[translate lang=english] Hello World! [/translate][translate lang=russian] Привет Мир! [/translate]</li>
+			<li>When called with the nodiv=1 argument (i.e [translate lang=english nodiv=1]text[/translate]) this shortcode will not put the contents in a &lt;div class="translate_%language_name%"&gt; element.</li>
+		</ul>
+	</li>
+	<br />
+
+
+	<li><strong>[translations] </strong></li>
+	Gives an unordered list of available languages and activation links. The li elements are listed with attribute class set like this: class="list_item_%language_name%" <br /> 
+	Arguments:
+		<ul>
+			<li>[flags=1]</li>
+		</ul>
+	Examples:
+		<ul>
+			<li> [translations flags=1] - lists flags associated with languages instead of their names.</li>
+		</ul>
+	</li>
+	<br />
+
+
+	<li><strong>[list_pages]</strong> </li>
+		Produces a list of pages which have the custom field %language_name%_title set for the currently activated language. 
+		This tag lists pages whose titles have been translated in other words. 
+		To exclude pages, simply delete the custom title field for that language on the specified page.
+	<br />
+	<br />
+
+	<li><strong>[tseveral]</strong></li>
+	A quick way to translate something into several languages without repeating [translate][/translate].<br />
+	Arguments:
+		<ul>
+			<li>&lt;%language_name%="text"&gt;</li>
+		</ul>
+	Example:
+		<ul>
+			<li> [tseveral english="Autumn" american="Fall" russian="Осень"]</li>
+		</ul>
+	</li>
+	<br />
+	<li><strong>[tdict]</strong></li>
+	Fetch the translation of a predefined term. <br />
+	Arguments:
+		<ul>
+			<li>&lt;term=someword&gt;</li>
+		</ul>
+	Example:
+		<ul>
+			<li> [tdict term=search]</li>
+		</ul>
+</ul>
+
+
+
+<h3>Template Tags</h3>
+Arguments may be suplied to the various functions as an associative array or as a plain string in other cases: <br />
+<code>
+	list_translations( array('flags' =&gt; '1') );<br />
+translate_term("homepage");
+</code>
+<p><strong>HOME</strong> - the URL of your homepage<br />
+	<strong>TEMPLATEPATH</strong> - the URL of your template directory</p>
+<ul>
+	<li><strong>&lt;?php list_translations(); ?</strong>&gt; - see the [translations] shortcode.</li>
+	<li> <strong>&lt;</strong><strong>?php translate_list_pages(); ?&gt; </strong> - see the [list_pages] shortcode.</li>
+	<li><strong>&lt;?php translate_link($parameters); ?&gt;</strong>
+		<ul>
+			<li>Parameters must be separated by the pipe symbol | .
+				<ul>
+					<li>lang = language name</li>
+					<li>link = http://www.wherever.com</li>
+					<li>text = Link display text</li>
+					<li>class = link style class (defaults to %language%_link)</li>
+					<li>target = link target</li>
+				</ul>
+			</li>
+			<li>Example: &lt;?php translate_link('lang=english| link=http://misternifty.com| text=Go to Mister Nifty| target=_blank') ?&gt;</li>
+		</ul>
+	</li>
+	<li><strong>&lt;?php translate_text($parameters); ?&gt;</strong>
+		<ul>
+			<li>Parameters must be separated by the pipe symbol | .
+				<ul>
+					<li>lang = language name</li>
+					<li>text = Paragraph text</li>
+					<li>class = link style class (defaults to %language%_text)</li>
+					<li>target = link target</li>
+					<li>p = yes/no (enclose text in a paragraph element)</li>
+				</ul>
+			</li>
+			<li>Example: &lt;?php translate_text(&#8216;lang=english| text=This paragraph will only display when English is selected.&#8217;) ?&gt;</li>
+		</ul>
+	</li>
+	<li><strong>&lt;?php translate_image($parameters); ?&gt;</strong>
+		<ul>
+			<li>Parameters must be separated by the pipe symbol | .
+				<ul>
+					<li>lang = language name</li>
+					<li>src = image source</li>
+					<li>link = URL if you want to link image.</li>
+					<li>target = link target</li>
+					<li>alt = text to show if image cant be displayed</li>
+					<li>title = name of image</li>
+					<li>class = link style class (defaults to %language%_image)</li>
+				</ul>
+			</li>
+			<li>Example: &lt;?php translate_image(&#8216;lang=english| src=TEMPLATEPATH/images/logo.png| link=HOME| title=My Logo| alt=My Logo &#8216;) ?&gt;</li>
+		</ul>
+	</li>
+	<li><strong>&lt;?php translate_title(); ?&gt; </strong>
+		<ul>
+			<li>Replace the_title(); with translate_title(); in your loop and &lt;title&gt; tags.</li>
+		</ul>
+	</li>
+
+	<li><strong>&lt;?php echo translate_term($predefined_term); ?&gt; </strong> </li>
+	Please not that this and the next tag return a value instead of printing it. 
+	This is done to make things like the folowing example easier. 
+	<pre>
+	&lt;div id="search"&gt; &lt;?php <b>$search</b> = translate_term("search"); ?&gt;
+	  &lt;form id="searchform" method="get" action="&lt;?php bloginfo ('home');  ?&gt;"&gt;
+	    &lt;input id="s" type="text" value="&lt;?php echo <b>$search</b>; ?&gt;" name="s" 
+		  onfocus="if (this.value == '&lt;?php echo <b>$search</b>; ?&gt;') {this.value = '';}"
+		  onblur="if (this.value == '') {this.value = '&lt;?php echo <b>$search</b>; ?&gt;';}" /&gt;
+	    &lt;/input&gt;
+	  &lt;/form&gt;
+	&lt;/div&gt;
+	</pre>
+
+	You may create a new function to echo the value if you dislike this behaviour like so: 
+	<pre>
+	function tt($t){ echo translate_term($t); }
+	</pre>
+
+	<li><strong>&lt;?php echo translate_several("english=fag|american=smoke|norwegian=sigg"); ?&gt; </strong> </li>
+
+
+</ul>
+<h1><a href="http://wordpress.org/extend/plugins/translate/">Download Translate Plugin</a></h1>
