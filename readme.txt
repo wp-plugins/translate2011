@@ -30,7 +30,7 @@ To facilitate the process of translating themes, there is a dictionary of terms 
 
 1. The admin interface with a few terms and languages.
 
-== Changes ==
+== Changelog ==
 == 1.3 ==
 June 2011; Jaroslav Rakhmatoullin <jazzoslav@gmail.com>:
 * The meta_key which is used for translating titles is no longer just
@@ -53,3 +53,9 @@ list_translations() as well as the order of languages.
 paragraphs with commas.
 * Nested shortcodes. You can now add contact forms, photo galleries and 
 whatever other plugin that uses shortcodes into the [translate] tags.
+
+== Upgrade Notice ==
+= 1.3 =
+Adds support for a defining and and using translated strings as well 
+as a couple new shortcodes. 
+
