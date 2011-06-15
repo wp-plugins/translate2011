@@ -30,6 +30,11 @@ To facilitate the process of translating themes, there is a dictionary of terms 
 
 1. The admin interface with a few terms and languages.
 
+== Previous Versions ==
+
+This plugin is a continuation of the Translate plugin by misternifty. The 
+new maintainer is tox2ik as of version 1.3. 
+
 == Changelog ==
 == 1.3 ==
 June 2011; Jaroslav Rakhmatoullin <jazzoslav@gmail.com>:
