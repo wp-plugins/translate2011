@@ -1,6 +1,6 @@
 === Translate ===
 Translate
-Contributors: misternifty, tox2ik
+Contributors: tox2ik
 Donate link: n/a
 Tags: language, languages, translate, translation, images, pages, posts, dictionary, the_title, list_pages, 
 Requires at least: 2.7
@@ -50,6 +50,7 @@ new maintainer is tox2ik as of version 1.3.
 prefix_translate_langs and prefix_translate_dict. _langs table has new 
 fields: icon and order which deside which img to show for language in 
 list_translations() as well as the order of languages.
+*  misternifty removed from the list of contributors (his request)
 
 = 1.2 = 
 
